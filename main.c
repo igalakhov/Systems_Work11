@@ -18,11 +18,11 @@ int main(){
 
   // print permissions
   int perm = info.st_mode;
-  printf(" Permissions: [%d]\n", perm);
+  printf(" Permissions: [%o]\n", perm);
 
   // print time of last access
   int laccess = info.st_atime;
-  printf(" Time of last access: [%d]\n", laccess);
+  printf(" Time of last access:\n  %s\n", ctime(&laccess));
 
   printf("\n");
   return 0;
