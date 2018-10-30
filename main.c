@@ -3,7 +3,6 @@
 #include <time.h>
 #include <sys/stat.h>
 
-
 int main(){
   char * filename = "main.c";
 
@@ -14,15 +13,16 @@ int main(){
   stat(filename, &info);
 
   // print file size
-
-  printf(" File size: [%s]\n", "");
+  int size = info.st_size;
+  printf(" File size: [%d]\n", size);
 
   // print permissions
-
-  printf(" Permissions: [%s]\n", "");
+  int perm = info.st_mode;
+  printf(" Permissions: [%d]\n", perm);
 
   // print time of last access
-  printf(" Time of last access: [%s]\n", "");
+  int laccess = info.st_atime;
+  printf(" Time of last access: [%d]\n", laccess);
 
   printf("\n");
   return 0;
